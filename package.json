@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "env TS_NODE_TRANSPILE_ONLY=true mocha -r ts-node/register src/**/*.spec.ts"
+    "test": "env TS_NODE_TRANSPILE_ONLY=true mocha -r ts-node/register src/**/*.spec.ts",
+    "mutate": "stryker run"
   },
   "author": "",
   "license": "ISC",
