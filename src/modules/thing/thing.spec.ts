@@ -2,7 +2,6 @@ import 'mocha';
 import * as chai from 'chai';
 const expect = chai.expect;
 chai.use(require('chai-as-promised'));
-import sinon from 'sinon';
 
 import { Thing } from './thing';
 
@@ -16,6 +15,14 @@ describe('Thing', () => {
 
     beforeEach(() => {
         thing = new Thing();
+    });
+
+    describe('constructor()', () => {
+        it('sets default values', () => {
+            expect(thing['varA']).to.equal(1);
+            expect(thing['varB']).to.equal(2);
+            expect(thing['varC']).to.equal('aa');
+        });
     });
 
     describe('doThingA()', () => {

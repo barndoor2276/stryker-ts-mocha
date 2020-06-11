@@ -8,13 +8,24 @@
     "progress"
   ],
   "testRunner": "mocha",
-  "transpilers": [
-    "typescript"
-  ],
   "testFramework": "mocha",
-  "coverageAnalysis": "perTest",
+  "coverageAnalysis": "off",
   "tsconfigFile": "tsconfig.json",
   "mutate": [
-    "src/**/*.ts"
-  ]
+    "src/**/*.ts",
+    "!src/**/*.spec.ts"
+  ],
+  "mochaOptions": {
+    "files": [
+      "src/**/*.ts"
+    ],
+    "spec": [
+      "src/**/*.spec.ts"
+    ],
+    "timeout": 3000,
+    "ui": "bdd",
+    "require": [
+      "ts-node/register"
+    ]
+  }
 }
